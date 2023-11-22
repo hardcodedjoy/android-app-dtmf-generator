@@ -1,0 +1,1 @@
+Simple android app for generating Dual-Tone Multi-Frequency (DTMF) tones for testing or signaling purposes. Outputs to audio using AudioTrack. All 16 buttons available.
