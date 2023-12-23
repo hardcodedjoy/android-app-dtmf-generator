@@ -43,4 +43,5 @@ SOFTWARE.
     <string name="right">RIGHT</string>
     <string name="both">BOTH</string>
     <string name="app_uses">App uses open-source libraries:</string>
+    <string name="unit_hz">Hz</string>
 </resources>

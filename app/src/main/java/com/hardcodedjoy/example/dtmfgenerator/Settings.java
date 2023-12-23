@@ -26,29 +26,17 @@ SOFTWARE.
 
 package com.hardcodedjoy.example.dtmfgenerator;
 
-import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
 
-import com.hardcodedjoy.util.ThemeUtil;
+public class Settings extends com.hardcodedjoy.appbase.Settings {
 
-public class Settings {
-
-    static private final String THEME_DEFAULT = ThemeUtil.SYSTEM;
+    // DEFAULTS
+    // static private final [type] VAR_NAME_DEFAULT = VALUE;
     static private final long SAMPLE_RATE_DEFAULT = 48000;
 
+    // SETTINGS variables
+    // private [type] varName;
     private long sampleRate;
-    private String theme;
-
-    private final SharedPreferences sp;
-
-    public Settings(SharedPreferences sp) {
-        this.sp = sp;
-        setTheme(sp.getString(Keys.theme, THEME_DEFAULT));
-        setSampleRate(sp.getLong(Keys.sampleRate, SAMPLE_RATE_DEFAULT));
-    }
-
-    public void setTheme(String theme) { this.theme = theme; }
-    public String getTheme() { return theme; }
 
     public void setSampleRate(long sampleRate) { this.sampleRate = sampleRate; }
     public void setSampleRate(String sampleRate) {
@@ -60,11 +48,16 @@ public class Settings {
     }
     public long getSampleRate() { return sampleRate; }
 
-    @SuppressLint("ApplySharedPref")
-    void save() {
-        sp.edit()
-                .putString(Keys.theme, getTheme())
-                .putLong(Keys.sampleRate, getSampleRate())
-                .commit();
+
+    @Override
+    public void onLoad(SharedPreferences sp) {
+        // insert code here to load more stuff from sp
+        setSampleRate(sp.getLong(SettingsKeys.sampleRate, SAMPLE_RATE_DEFAULT));
+    }
+
+    @Override
+    public void onSave(SharedPreferences.Editor editor) {
+        // insert code here to save more stuff to editor
+        editor.putLong(SettingsKeys.sampleRate, getSampleRate());
     }
 }

@@ -44,15 +44,5 @@ SOFTWARE.
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".AboutActivity"
-            android:launchMode="singleTop"
-            android:exported="true">
-        </activity>
-        <activity
-            android:name=".SettingsActivity"
-            android:launchMode="singleTop"
-            android:exported="true">
-        </activity>
     </application>
 </manifest>

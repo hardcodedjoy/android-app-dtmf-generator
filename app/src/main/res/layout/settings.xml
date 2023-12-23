@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!--
 MIT License
 
@@ -23,34 +24,37 @@ SOFTWARE.
 
 -->
 
-<FrameLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?android:colorBackground">
 
-    <LinearLayout
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="top|right"
-        android:background="?android:colorForeground"
-        android:orientation="vertical"
-        tools:ignore="UselessParent">
+        android:text="@string/sample_rate" />
 
-        <Button
-            android:id="@+id/btn_about"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_sample_rate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical|left"
-            android:text="@string/about" />
-
-        <Button
-            android:id="@+id/btn_settings"
+            android:layout_weight="1.0"
+            android:inputType="number"
+            android:selectAllOnFocus="true"
+            tools:ignore="Autofill,LabelFor" />
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical|left"
-            android:text="@string/settings" />
-
+            android:layout_weight="2.0"
+            android:text="@string/unit_hz"/>
     </LinearLayout>
-
-</FrameLayout>
+</LinearLayout>

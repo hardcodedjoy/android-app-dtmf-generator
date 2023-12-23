@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+/*
+
 MIT License
 
 Copyright © 2023 HARDCODED JOY S.R.L. (https://hardcodedjoy.com)
@@ -22,31 +22,10 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
--->
+*/
 
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:state_enabled="true"
-        android:state_pressed="false"
-        android:state_focused="false"
-        android:drawable="@drawable/btn_normal"/>
-    <item
-        android:state_enabled="false"
-        android:state_pressed="false"
-        android:state_focused="false"
-        android:drawable="@drawable/btn_disabled"/>
-    <item
-        android:state_enabled="true"
-        android:state_pressed="true"
-        android:drawable="@drawable/btn_pressed"/>
-    <item
-        android:state_enabled="true"
-        android:state_pressed="false"
-        android:state_focused="true"
-        android:drawable="@drawable/btn_focused"/>
-    <item
-        android:state_enabled="false"
-        android:state_pressed="false"
-        android:state_focused="true"
-        android:drawable="@drawable/btn_disabled_focused"/>
-</selector>
+package com.hardcodedjoy.example.dtmfgenerator;
+
+public class SettingsKeys {
+    static public final String sampleRate = "sampleRate";
+}

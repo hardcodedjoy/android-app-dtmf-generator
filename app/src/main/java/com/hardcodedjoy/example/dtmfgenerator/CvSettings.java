@@ -26,7 +26,29 @@ SOFTWARE.
 
 package com.hardcodedjoy.example.dtmfgenerator;
 
-public class Keys {
-    static public final String theme = "theme";
-    static public final String sampleRate = "sampleRate";
+import android.annotation.SuppressLint;
+
+import com.hardcodedjoy.appbase.contentview.ContentView;
+import com.hardcodedjoy.appbase.contentview.CvSettingsBase;
+import com.hardcodedjoy.appbase.gui.GuiLinker;
+import com.hardcodedjoy.appbase.gui.SetGetter;
+
+@SuppressLint("ViewConstructor")
+public class CvSettings extends CvSettingsBase {
+
+    @Override
+    public void init() {
+        super.init();
+
+        Settings settings = (Settings) ContentView.settings;
+
+        addSettings(R.layout.settings);
+
+        GuiLinker.link(this, R.id.et_sample_rate, new SetGetter() {
+            @Override
+            public void set(String value) { settings.setSampleRate(value); }
+            @Override
+            public String get() { return "" + settings.getSampleRate(); }
+        });
+    }
 }
